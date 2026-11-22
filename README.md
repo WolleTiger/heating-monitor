@@ -7,7 +7,7 @@ exposes temperatures to Apple Home through Homebridge.
 
 > **Note:** This project was developed with the help of AI (Claude by Anthropic). The idea, the requirements, the hardware setup, and the testing on my own system are mine; the scripts and dashboards were written in collaboration with an AI assistant.
 
-![Grafana: heating curve and room temperatures](docs/dashboard-heating-curve.webp)
+![Grafana: heating curve, room temperatures, burner statistics and estimated gas costs](docs/dashboard-heating-curve.png)
 
 ![Grafana: boiler overview with operating mode, burner starts and fault memory](docs/dashboard-boiler.png)
 
@@ -170,6 +170,7 @@ Dashboard tips:
 - Use `suffix:` units (`suffix:°C`, `suffix:h`) instead of automatic unit scaling. Some unit types scale large values automatically in unexpected ways.
 - Flux `join` across buckets can be slow or confusing. Compute cross-bucket values on the server and write them as a new measurement instead.
 - Burner starts and hours per day come from the difference between the last value of a day and the last value of the previous day.
+- Gas consumption and heating cost panels are **estimates**: they multiply burner hours by an assumed consumption per hour and an assumed gas price. Adjust these assumptions to your own boiler and tariff.
 
 ## Known limitations
 
