@@ -1,0 +1,10 @@
+# Secrets and runtime data: never commit
+.env
+*.pass
+*_token
+*.state
+*.log
+bridge_write.txt
+influx_token
+ha_token
+mqtt.pass

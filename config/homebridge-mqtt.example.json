@@ -1,0 +1,14 @@
+{
+  "_comment": "Example Homebridge platform entry for homebridge-mqtt. Replace the password placeholder with the value from mqtt.pass (never commit the real value).",
+  "platforms": [
+    {
+      "platform": "mqtt",
+      "name": "MQTT",
+      "url": "mqtt://127.0.0.1:1883",
+      "username": "hb",
+      "password": "YOUR_MQTT_PASSWORD",
+      "topicPrefix": "homebridge",
+      "debug": false
+    }
+  ]
+}
