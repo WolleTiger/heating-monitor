@@ -9,7 +9,7 @@ exposes temperatures to Apple Home through Homebridge.
 
 ![Grafana: heating curve and room temperatures](docs/dashboard-heating-curve.webp)
 
-![Grafana: boiler overview with operating mode, burner starts and fault memory](docs/dashboard-boiler.webp)
+![Grafana: boiler overview with operating mode, burner starts and fault memory](docs/dashboard-boiler.png)
 
 ## What it does
 
