@@ -18,7 +18,6 @@ exposes temperatures to Apple Home through Homebridge.
 - **Visualises** it in Grafana: current values, heating curve, room temperatures, burner starts and hours per day, fault history.
 - **Alerts** on your phone via Home Assistant when the boiler reports a fault or a new fault-memory entry.
 - **Shows** temperatures and the fault state in **Apple Home** through Homebridge (MQTT plugin).
-- **Compares** EV charging energy with diesel cost per month (optional, see `scripts/diesel_savings.py`).
 
 **The system is read-only by design.** The scripts never write settings to the boiler. Setting commands (hot water schedule, room setpoints, operating mode) exist in vcontrold but are deliberately not used here.
 
@@ -91,7 +90,6 @@ Copy `scripts/` to the server and add these lines to the crontab (`crontab -e`):
 PATH=/usr/local/bin:/usr/bin:/bin
 * * * * *     flock -n /tmp/bridge.lock timeout 55 /opt/heating/bridge.sh
 */5 * * * *   flock -n /tmp/alarm.lock  timeout 55 /opt/heating/alarm.sh
-10 6 * * *    /usr/bin/python3 /opt/heating/diesel_savings.py
 ```
 
 > **Pitfall:** Cron has a minimal `PATH`. Without the first line the `vclient` command is not found, and the bridge silently writes nothing.
